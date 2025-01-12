@@ -1,0 +1,337 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Construction Company
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         eader {
+            background-color:darkseagreen;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+            padding: 1rem ;
+            
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .hero {
+            background: url('https: //placehold .co/ 877x600') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .services, .projects, .contact {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .services h2, .projects h2, .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .services .service-item, .projects .project-item {
+            display: inline-block;
+            width: 30%;
+            margin: 1%;
+            vertical-align: top;
+        }
+        .services .service-item img, .projects .project-item img {
+            width: 100%;
+            height: auto;
+        }
+        .services .service-item h3, .projects .project-item h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact form label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+        }
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .contact form button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        .contact form button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .contractor{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+
+        }
+        #contractors {
+    display: flex;
+    flex-direction: column;
+    width: 373px;
+    margin: auto;
+    gap: 23px;
+}
+   #contractors.contractors{
+    justify-content: center;
+    align-items: center;
+}
+  </style>
+ </head>
+ <body>
+  <nav>
+    <a href="MFM BUILDER PROVIDER">  
+        MFM BUILDER PROVIDERS
+    </a>
+   <a href="#services">
+    Services
+   </a>
+   <a href="#projects">
+    Projects
+   </a>
+   <a href="#contractors">
+     contractors
+   </a>
+   <a href="#contact">
+    Contact
+   </a>
+  </nav>
+  <section class="hero">
+   <div class=" slider">
+    <div class="slide">
+        <img src="2 image new.jpg" alt="">
+    </div>
+   </div>
+ 
+   </div>
+  </section>
+  <section class="services" id="services">
+   <h2>
+    Our Services
+   </h2>
+   <div class="service-item">
+    <img alt="Construction workers building a house" height="200" src="https://storage.googleapis.com/a1aa/image/MA53eKLqn4XuCS3ajPmKXgX2HAcFLp6y2WH4fWE4FJOKot5TA.jpg" width="300"/>
+    <h3>
+     Residential Construction
+    </h3>
+    <p>
+     We build quality homes tailored to your needs.
+    </p>
+   </div>
+   <div class="service-item">
+    <img alt="Commercial building under construction" height="200" src="https://storage.googleapis.com/a1aa/image/3uzGsqkwUNraBBqfL9eQveLeVCtFYp0y8fBceadBcfe5Mot5TA.jpg" width="300"/>
+    <h3>
+     Commercial Construction
+    </h3>
+    <p>
+     Professional construction services for businesses.
+    </p>
+   </div>
+   <div class="service-item">
+    <img alt="Renovation of an old building" height="200" src="https://storage.googleapis.com/a1aa/image/zn2JvbYgKxZULVvWZI9EY6D2GW09HnP56fmtZWRTS3RI028JA.jpg" width="300"/>
+    <h3>
+     Renovation
+    </h3>
+    <p>
+     Transforming old spaces into new, functional areas.
+    </p>
+   </div>
+  </section>
+  <section class="projects" id="projects">
+   <h2>
+    Our Projects
+   </h2>
+   <div class="project-item">
+    <img alt="Completed residential house" height="200" src="https://storage.googleapis.com/a1aa/image/KqNvOeaUDMXkMy5bJ1OvsvwpzdMD7Tjere3uaUAfaHNFh2mPB.jpg" width="300"/>
+    <h3>
+     Residential House
+    </h3>
+    <p>
+     A beautiful home built with precision and care.
+    </p>
+   </div>
+   <div class="project-item">
+    <img alt="Modern office building" height="200" src="https://storage.googleapis.com/a1aa/image/LtCPcbpWb9r2CFv6MHhWx4WGZJxsTuMSeiyF8eSkNOmOot5TA.jpg" width="300"/>
+    <h3>
+     Office Building
+    </h3>
+    <p>
+     A state-of-the-art office space for modern businesses.
+    </p>
+   </div>
+   <div class="project-item">
+    <img alt="Renovated historical building" height="200" src="https://storage.googleapis.com/a1aa/image/G02oQkDxA6JyCVveu6UCWRBvEUxgnbeGWuC2WsYrERLNot5TA.jpg" width="300"/>
+    <h3>
+     Historical Building
+    </h3>
+    <p>
+     Preserving history while adding modern functionality.
+    </p>
+   </div>
+  </section>
+  <section class="contractors" id="contractors">
+    <div class="contractor">
+       <h45>Near By Contractors</h5>
+      <input type="text" id="search" placeholder="Enter your location..." />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div>
+      <label for="ratingFilter">Filter by Rating:</label>
+      <select id="ratingFilter">
+        <option value="0">All Ratings</option>
+        <option value="4">4 Stars & Up</option>
+        <option value="3">3 Stars & Up</option>
+        <option value="2">2 Stars & Up</option>
+        <option value="1">1 Star & Up</option>
+     </select>
+    </div>
+     <div class="rating" id="rating">
+     <label for="sortBy">Sort By:</label>
+     <select id="sortBy">
+        <option value="name">Name</option>
+        <option value="rating">Rating</option>
+     </select>
+
+     <div id="contractorList" class="contractor-list"></div>
+     <div id="error" style="color: red;"></div>
+    </div>
+  <script>
+  const contractors = [
+    { name: "Abdul Anwer Ansari", location: "Momin Pura Parbhani", phone: "9028204465", rating: 4.5 },
+    { name: "Abdul kadar", location:"Dargaroad Parbhani", phone:"9518772797", rating:5.0},
+    { name: "Shaikh Afzal", location: "Los Angeles", phone: "8975072707", rating: 3.8 },
+    { name: " Shaikh BABU", location: "Aziziya nagar Parbhani", phone: "9422879930", rating: 5.0 },
+    { name: "Home Fixers", location: "Houston", phone: "456-789-0123", rating: 2.5 },
+    { name: "Zakir khan", location: "Dargaroad Parbhani", phone: "9922951525", rating: 4.4 },
+    { name: "HANA CONSTRUCTIONS", location:" kadbi mandi Parbhani", phone:"8862062620", rating:5.0},
+    { name: "Rafat khan", location:"Basmat Road Parbhani", phone:"8855037551", rating:5.0 },
+    {name:"Milan Construction", location:"Mulla Masjid Parbhani", phone:"8421623369",rating:5.0},
+];
+
+document.getElementById('searchBtn').addEventListener('click', function() {
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+    const ratingFilter = parseFloat(document.getElementById('ratingFilter').value);
+    const sortBy = document.getElementById('sortBy').value;
+
+    let filteredContractors = contractors.filter(contractor => 
+        contractor.location.toLowerCase().includes(searchTerm)
+    );
+
+    // Filter by rating
+    if (ratingFilter > 0) {
+        filteredContractors = filteredContractors.filter(contractor => contractor.rating >= ratingFilter);
+    }
+
+    // Sort contractors
+    if (sortBy === 'name') {
+        filteredContractors.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === 'rating') {
+        filteredContractors.sort((a, b) => b.rating - a.rating);
+    }
+
+    displayContractors(filteredContractors);
+});
+
+function displayContractors(contractors) {
+    const contractorList = document.getElementById('contractorList');
+    const errorDiv = document.getElementById('error');
+    contractorList.innerHTML = ''; // Clear previous results
+    errorDiv.innerHTML = ''; // Clear previous error
+
+    if (contractors.length === 0) {
+        errorDiv.innerHTML = ' SORRY! No contractors found in this location.';
+        return;
+    }
+
+    contractors.forEach(contractor => {
+        const contractorDiv = document.createElement('div');
+        contractorDiv.className = 'contractor';
+        contractorDiv.innerHTML = `
+            <strong>${contractor.name}</strong>
+            <span>Location: ${contractor.location}</span><br>
+            <span>Phone: ${contractor.phone}</span><br>
+            <span class="rating">Rating: ${'★'.repeat(Math.floor(contractor.rating))}${'☆'.repeat(5 - Math.floor(contractor.rating))} (${contractor.rating})</span>
+        `;
+        contractorList.appendChild(contractorDiv);
+    });
+    }
+ </script> 
+ </section>
+  <section class="contact" id="contact">
+   <h2>
+    Contact Us
+   </h2>
+   <form action="/contact" method="post">
+    <label for="name">
+     Name
+    </label>
+    <input id="name" name="name" required="" type="text"/>
+    <label for="email">
+     Email
+    </label>
+    <input id="email" name="email" required="" type="email"/>
+    <label for="message">
+     Message
+    </label>
+    <textarea id="message" name="message" required="" rows="5"></textarea>
+    <button type="submit">
+     Send Message
+    </button>
+   </form>
+  </section>
+  <footer>
+   <p>
+    © 2023 Construction Company. All rights reserved.
+   </p>
+  </footer>
+ </body>
+</html>
