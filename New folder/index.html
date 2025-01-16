@@ -146,14 +146,224 @@
    </a>
   </nav>
   <section class="hero">
-   <div class=" slider">
-    <div class="slide">
-        <img src="2 image new.jpg" alt="">
+    <div class="slider">
+      <div class="slides">
+        <img src="first image.jpg"alt="Construction Image 1" />
+        <img src="image 4.jpg" alt="Construction Image 2" />
+        <img src="image 5.jpg" alt="Construction Image 3" />
+        <img src="image 3.jpg" alt="construction image 4"/>
+        <img src="first image.jpg" alt="construction image repeat"/>
+        <img src="image 4.jpg" alt="repeat image "/>
+      </div>
     </div>
-   </div>
- 
-   </div>
   </section>
+  <style>
+      /* Image Slider */
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 1s ease-in-out;
+      }
+
+      .slides img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        .services .service-item,
+        .projects .project-item {
+          width: 50%;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+  </style>
+  <script>
+    // Image Slider Script
+    // Image Slider Script
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slides img');
+   const totalSlides = slides.length;
+
+   function changeSlide() {
+  // Move to the next slide and loop back to the first one after the last slide
+   currentSlide = (currentSlide + 1) % totalSlides;
+
+  // Apply the translation to the slides
+   document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 40}%)`;
+}
+
+// Automatically change the slide every 3 seconds
+  setInterval(changeSlide, 3000);
+
+  </script>
+  
+  <div class="chat-container">
+    <div class="chat-header" onclick="toggleChat()">
+        Chatbot
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="messages" id="messages"></div>
+        <input type="text" id="userInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.chat-box {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.messages p {
+    margin: 5px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+ button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+<script>
+function toggleChat() {
+    const chatBox = document.getElementById('chatBox');
+    const messages = document.getElementById('messages');
+
+    // Toggle the chatbox visibility
+    chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    
+    // If chat box is being opened (not already visible)
+    if (chatBox.style.display === 'flex' && messages.children.length === 0) {
+        // Send the initial bot greeting
+        const botMessage = document.createElement('p');
+        botMessage.textContent = 'Bot: Hello! How may I help you today?';
+        messages.appendChild(botMessage);
+    }
+}
+
+function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const messages = document.getElementById('messages');
+
+    if (userInput.value.trim() === '') return;
+
+    // Display user message
+    const userMessage = document.createElement('p');
+    userMessage.textContent = 'You: ' + userInput.value;
+    messages.appendChild(userMessage);
+
+    // Simulate bot response
+    const botMessage = document.createElement('p');
+    botMessage.textContent = 'Bot: ' + getBotResponse(userInput.value);
+    messages.appendChild(botMessage);
+
+    // Clear input
+    userInput.value = '';
+
+    // Scroll to the bottom of the messages
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function getBotResponse(userMessage) {
+    // Simple bot response logic
+    if (userMessage.toLowerCase().includes('hello')) {
+        return 'Hi! How can I help you today?';
+    } else if (userMessage.toLowerCase().includes('who created you?')) {
+        return 'Eng.ABDUL MAJEED created me, and I am very grateful that I was created by his hands.';
+    } else if (userMessage.toLowerCase().includes('how are you?')) {
+        return 'I am fine, thanks for asking!';
+    } else if (userMessage.toLowerCase().includes('can you give me mobile number of your owner?')) {
+        return 'Sure, why not! Here is the number of Eng.ABDUL MAJEED = 8421813969';
+    } else if (userMessage.toLowerCase().includes('who creates you?')) {
+        return 'Eng.ABDUL MAJEED s/o ABDUL MUJEEB created me, and I am very grateful that I was created by his hands.';
+    } else if (userMessage.toLowerCase().includes('who made you?')) {
+        return 'Eng.ABDUL MAJEED s/o ABDUL MUJEEB created me, and I am very grateful that I was created by his hands.';
+    } else if (userMessage.toLowerCase().includes('what do you do?')) {
+        return 'Ask me anything related to this website. Surely, I will be able to answer your questions.';
+    } else if (userMessage.toLowerCase().includes('who is your owner?')) {
+        return 'Eng.ABDUL MAJEED s/o ABDUL MUJEEB created me, and I am very grateful that I was created by his hands.';
+    } else if (userMessage.toLowerCase().includes('what is the purpose of this website?')) {
+        return 'With the help of this website, you can find your nearby contractor and contact them.';
+    } else if (userMessage.toLowerCase().includes('can you provide me contact number of your owner?')) {
+        return 'Sure, why not! Here is the number of Eng.ABDUL MAJEED = 8421813969';
+    } else if (userMessage.toLowerCase().includes('who created this website?')) {
+        return 'Eng.ABDUL MAJEED ABDUL MUJEEB created this website.';
+    }else if (userMessage.toLowerCase().includes("can you give me your owner's contact number?")) {
+        return 'Sure, why not! Here is the number of Eng.ABDUL MAJEED = 8421813969'; 
+    }
+    else if (userMessage.toLowerCase().includes('hi')) {
+        return 'Hello! Please tell me how may I help you.';
+    } else {
+        return 'Sorry, I do not understand that.';
+    }
+}
+
+// Event listener for "Enter" key press
+document.getElementById('userInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent the default action (form submission or new line in text area)
+        sendMessage();  // Trigger the sendMessage function
+    }
+});
+
+</script>
   <section class="services" id="services">
    <h2>
     Our Services
@@ -244,65 +454,129 @@
      <div id="contractorList" class="contractor-list"></div>
      <div id="error" style="color: red;"></div>
     </div>
-  <script>
-  const contractors = [
-    { name: "Abdul Anwer Ansari", location: "Momin Pura Parbhani", phone: "9028204465", rating: 4.5 },
-    { name: "Abdul kadar", location:"Dargaroad Parbhani", phone:"9518772797", rating:5.0},
-    { name: "Shaikh Afzal", location: "Los Angeles", phone: "8975072707", rating: 3.8 },
-    { name: " Shaikh BABU", location: "Aziziya nagar Parbhani", phone: "9422879930", rating: 5.0 },
-    { name: "Home Fixers", location: "Houston", phone: "456-789-0123", rating: 2.5 },
-    { name: "Zakir khan", location: "Dargaroad Parbhani", phone: "9922951525", rating: 4.4 },
-    { name: "HANA CONSTRUCTIONS", location:" kadbi mandi Parbhani", phone:"8862062620", rating:5.0},
-    { name: "Rafat khan", location:"Basmat Road Parbhani", phone:"8855037551", rating:5.0 },
-    {name:"Milan Construction", location:"Mulla Masjid Parbhani", phone:"8421623369",rating:5.0},
-];
 
-document.getElementById('searchBtn').addEventListener('click', function() {
-    const searchTerm = document.getElementById('search').value.toLowerCase();
-    const ratingFilter = parseFloat(document.getElementById('ratingFilter').value);
-    const sortBy = document.getElementById('sortBy').value;
 
-    let filteredContractors = contractors.filter(contractor => 
-        contractor.location.toLowerCase().includes(searchTerm)
-    );
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            display: none; /* Initially hide the table */
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 
-    // Filter by rating
-    if (ratingFilter > 0) {
-        filteredContractors = filteredContractors.filter(contractor => contractor.rating >= ratingFilter);
+
+<h2>Contractor List</h2>
+
+<table id="contractorTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Phone</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Contractor rows will be added here -->
+    </tbody>
+</table>
+
+<script>
+    const contractors = [
+        { name: "Abdul Anwer Ansari", location: "Momin Pura Parbhani", phone: "9028204465", rating: 4.5 },
+        { name: "Abdul kadar", location:"Dargaroad Parbhani", phone:"9518772797", rating:5.0 },
+        { name: "Shaikh Afzal", location: "Los Angeles Parbhani", phone: "8975072707", rating: 3.8 },
+        { name: "Shaikh BABU", location: "Aziziya nagar Parbhani", phone: "9422879930", rating: 5.0 },
+        { name: "Home Fixers", location: "Houston ", phone: "456-789-0123", rating: 2.5 },
+        { name: "Zakir khan", location: "Dargaroad Parbhani", phone: "9922951525", rating: 4.4 },
+        { name: "HANA CONSTRUCTIONS", location:" kadbi mandi Parbhani", phone:"8862062620", rating:5.0 },
+        { name: "Rafat khan", location:"Basmat Road Parbhani", phone:"8855037551", rating:5.0 },
+        { name:"Milan Construction", location:"Mulla Masjid Parbhani", phone:"8421623369", rating:5.0 },
+    ];
+
+    // Function to create a table row for each contractor
+    function createContractorRow(contractor) {
+        const tableBody = document.querySelector("#contractorTable tbody");
+        const row = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = contractor.name;
+        row.appendChild(nameCell);
+
+        const locationCell = document.createElement("td");
+        locationCell.textContent = contractor.location;
+        row.appendChild(locationCell);
+
+        const phoneCell = document.createElement("td");
+        phoneCell.textContent = contractor.phone;
+        row.appendChild(phoneCell);
+
+        const ratingCell = document.createElement("td");
+        ratingCell.textContent = contractor.rating;
+        row.appendChild(ratingCell);
+
+        tableBody.appendChild(row);
     }
 
-    // Sort contractors
-    if (sortBy === 'name') {
-        filteredContractors.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === 'rating') {
-        filteredContractors.sort((a, b) => b.rating - a.rating);
-    }
+    // Iterate through contractors and create rows
+    contractors.forEach(createContractorRow);
 
-    displayContractors(filteredContractors);
-});
+    // Add event listener to search button
+    document.getElementById('searchBtn').addEventListener('click', function() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
 
-function displayContractors(contractors) {
-    const contractorList = document.getElementById('contractorList');
-    const errorDiv = document.getElementById('error');
-    contractorList.innerHTML = ''; // Clear previous results
-    errorDiv.innerHTML = ''; // Clear previous error
+        // Check if 'parbhani' is included in the search term
+        if (searchTerm.includes("parbhani")) {
+            document.getElementById('contractorTable').style.display = "table"; // Show the table
 
-    if (contractors.length === 0) {
-        errorDiv.innerHTML = ' SORRY! No contractors found in this location.';
-        return;
-    }
+            // Filter contractors by location
+            let filteredContractors = contractors.filter(contractor => 
+                contractor.location.toLowerCase().includes(searchTerm)
+            );
 
-    contractors.forEach(contractor => {
-        const contractorDiv = document.createElement('div');
-        contractorDiv.className = 'contractor';
-        contractorDiv.innerHTML = `
-            <strong>${contractor.name}</strong>
-            <span>Location: ${contractor.location}</span><br>
-            <span>Phone: ${contractor.phone}</span><br>
-            <span class="rating">Rating: ${'★'.repeat(Math.floor(contractor.rating))}${'☆'.repeat(5 - Math.floor(contractor.rating))} (${contractor.rating})</span>
-        `;
-        contractorList.appendChild(contractorDiv);
+            // Display filtered contractors
+            displayContractors(filteredContractors);
+        } else {
+            document.getElementById('contractorTable').style.display = "none"; // Hide the table if no "parbhani"
+        }
     });
+
+    function displayContractors(contractors) {
+        const tableBody = document.querySelector("#contractorTable tbody");
+        tableBody.innerHTML = ''; // Clear previous results
+
+        if (contractors.length === 0) {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td colspan="4">No contractors found for this location.</td>`;
+            tableBody.appendChild(row);
+            return;
+        }
+
+        contractors.forEach(createContractorRow);
     }
  </script> 
  </section>
@@ -310,22 +584,24 @@ function displayContractors(contractors) {
    <h2>
     Contact Us
    </h2>
-   <form action="/contact" method="post" data-netlify="true" onSubmit="submit">>
-    <label for="name">
-     Name
-    </label>
-    <input id="name" name="name" required="" type="text"/>
-    <label for="email">
+   <form  class="contact"
+     name='Send Message' netlify>
+        <action="/contact" method="POST" data-netlify="true" onSend Message="Send Message">
+     <label for="name">
+      Name
+     </label>
+     <input id="name" name="name" required="" type="text"/>
+     <label for="email">
      Email
-    </label>
-    <input id="email" name="email" required="" type="email"/>
-    <label for="message">
+     </label>
+     <input id="email" name="email" required="" type="email"/>
+     <label for="message">
      Message
-    </label>
-    <textarea id="message" name="message" required="" rows="5"></textarea>
-    <button type="submit">
+      </label>
+     <textarea id="message" name="message" required="" rows="5"></textarea>
+     <button type="Send Message">
      Send Message
-    </button>
+     </button>
    </form>
   </section>
   <footer>
